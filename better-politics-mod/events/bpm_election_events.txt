@@ -106,20 +106,7 @@ bpm_election_events.1 = {
 
 bpm_election_events.2 = {
 	type = country_event
-	placement = ROOT
-	title = bpm_election_events.2.t
-	desc = bpm_election_events.2.d
-	flavor = bpm_election_events.2.f
-
-	duration = 3
-
-	event_image = {
-		video = "unspecific_politicians_arguing"
-	}
-
-	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
-
-	icon = "gfx/interface/icons/event_icons/event_election.dds"
+	hidden = yes
 
 	trigger = {
 		any_interest_group = {
@@ -156,11 +143,7 @@ bpm_election_events.2 = {
 			}
 			save_scope_as = bpm_non_primary_cu
 		}
-	}
 
-	option = { # make nonprimary leader
-		name = bpm_election_events.2.a
-		default_option = yes
 		scope:bpm_old_leader = {
 			kill_character = yes
 		}
@@ -170,4 +153,10 @@ bpm_election_events.2 = {
 			culture = scope:bpm_non_primary_cu
 		}
 	}
+
+	# option = { # make nonprimary leader
+	# 	name = bpm_election_events.2.a
+	# 	default_option = yes
+		
+	# }
 }
