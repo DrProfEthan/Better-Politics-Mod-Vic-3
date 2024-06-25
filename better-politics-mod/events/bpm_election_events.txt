@@ -103,3 +103,71 @@ bpm_election_events.1 = {
 	}
 
 }
+
+bpm_election_events.2 = {
+	type = country_event
+	placement = ROOT
+	title = bpm_election_events.2.t
+	desc = bpm_election_events.2.d
+	flavor = bpm_election_events.2.f
+
+	duration = 3
+
+	event_image = {
+		video = "unspecific_politicians_arguing"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_election.dds"
+
+	trigger = {
+		any_interest_group = {
+			leader = {
+				character_is_discriminated = no
+			}
+			owner = {
+				is_subject = yes
+				NOR = {
+	 				is_subject_type = subject_type_personal_union
+	 				is_subject_type = subject_type_tributary
+	 			}
+			}
+		}
+	}
+
+	immediate = {
+		random_interest_group = {
+			limit = {
+				bpm_ig_is_ideological = yes
+				is_marginal = no
+				leader = {
+					character_is_discriminated = no
+				}
+			}
+			leader = { 
+				save_scope_as = bpm_old_leader 
+			}
+			save_scope_as = bpm_old_leader_ig
+		}
+		random_scope_culture = {
+			limit = {
+				culture_is_discriminated_in = ROOT
+			}
+			save_scope_as = bpm_non_primary_cu
+		}
+	}
+
+	option = { # make nonprimary leader
+		name = bpm_election_events.2.a
+		default_option = yes
+		scope:bpm_old_leader = {
+			kill_character = yes
+		}
+		create_character = {
+			ig_leader = yes
+			interest_group = scope:bpm_old_leader_ig
+			culture = scope:bpm_non_primary_cu
+		}
+	}
+}

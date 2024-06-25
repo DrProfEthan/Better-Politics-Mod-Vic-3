@@ -23,6 +23,9 @@
  ideology_dop_oligarch:0 "Oligarch"
  ideology_dop_oligarch_desc:0 "#lore This group thinks that a caste of wealthy and/or noble patricians should be the main decision-makers in government. Usually, this belief is motivated more by self-interest than any clear ideology, as this group consists either of oligarchs or their direct beneficiaries. #!"
 
+ ideology_dop_colonial_oligarch:0 "Colonial Oligarch"
+ ideology_dop_colonial_oligarch_desc:0 "#lore This group is commited to maintaining minority rule over the colonial population, and maintaining an administration tailored to the economic and geopolitical benefit of their overlords. #!"
+
  ideology_dop_technocrat:0 "Technocrat"
  ideology_dop_technocrat_desc:0 "#lore Out of a belief that society can be scientifically managed, technocrats eschew democracy in favor of decision-making by bureaucrats and educated professionals. #!"
 
